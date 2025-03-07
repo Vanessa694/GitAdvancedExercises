@@ -236,5 +236,252 @@ Date:   Mon Mar 3 11:23:19 2025 +0200
 ```
 ### challenge5
 ```bash
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git log --oneline
+5ffcd14 (HEAD -> main) Unwanted commit
+6c73f9f (origin/main) Add readme.md
+b394919 Create fourth File
+babfe62 chore: Create initial file
+3cc7dac chore:  create another file
+59b135b chore: Create initial file
+c1fc39e chore: Create create another file
+2940878 (master) chore: Create initial file
+aac3fd8 chore: Create initial file
+...skipping...
+5ffcd14 (HEAD -> main) Unwanted commit
+6c73f9f (origin/main) Add readme.md
+b394919 Create fourth File
+babfe62 chore: Create initial file
+3cc7dac chore:  create another file
+59b135b chore: Create initial file
+c1fc39e chore: Create create another file
+2940878 (master) chore: Create initial file
+aac3fd8 chore: Create initial file
 
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git rebase -i HEAD~1
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git add unwanted.txt
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git commit -m "Unwanted commit"
+[main 65f8830] Unwanted commit
+ 1 file changed, 1 insertion(+)
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git rebase -i HEAD~1
+Successfully rebased and updated refs/heads/main.
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git log --oneline
+5ffcd14 (HEAD -> main) Unwanted commit
+6c73f9f (origin/main) Add readme.md
+b394919 Create fourth File
+babfe62 chore: Create initial file
+3cc7dac chore:  create another file
+59b135b chore: Create initial file
+c1fc39e chore: Create create another file
+2940878 (master) chore: Create initial file
+aac3fd8 chore: Create initial file
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git rebase -i HEAD~3
+Successfully rebased and updated refs/heads/main.
+```
+### Challenge 6
+```bash
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git add unwanted.txt
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git commit -m "Unwanted commit"
+[main 65f8830] Unwanted commit
+ 1 file changed, 1 insertion(+)
+```
+### challenge 7
+```bash
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git log --oneline
+5ffcd14 (HEAD -> main) Unwanted commit
+6c73f9f (origin/main) Add readme.md
+b394919 Create fourth File
+babfe62 chore: Create initial file
+3cc7dac chore:  create another file
+59b135b chore: Create initial file
+c1fc39e chore: Create create another file
+2940878 (master) chore: Create initial file
+aac3fd8 chore: Create initial file
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git rebase -i HEAD~3
+Successfully rebased and updated refs/heads/main.
+```
+### challenge 8
+```bash
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git checkout -b ft/branch
+Switched to a new branch 'ft/branch'
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (ft/branch)
+$ touch test5.md
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (ft/branch)
+$ echo "Test file 5 content" > test5.md
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (ft/branch)
+$ git add test5.m
+fatal: pathspec 'test5.m' did not match any files
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (ft/branch)
+$ git add test5.md
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (ft/branch)
+$ git commit -m "Implemented test 5"
+[ft/branch c139841] Implemented test 5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5.md
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (ft/branch)
+$ git checkout main
+Switched to branch 'main'
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git log --oneline
+0fd9a1f (HEAD -> main) Add readme.md
+d65d834 Create fourth File
+159727b Unwanted commit
+babfe62 chore: Create initial file
+3cc7dac chore:  create another file
+59b135b chore: Create initial file
+c1fc39e chore: Create create another file
+2940878 (master) chore: Create initial file
+aac3fd8 chore: Create initial file
+
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git cherry-pick a1b2c3
+fatal: bad revision 'a1b2c3'
+
+```
+### challenge 9
+```bash
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git log --graph
+* commit 19ddd0ff61e7bcefb3082ee40b0924223451190e (HEAD -> main)
+| Author: Vanessa Gatete <gatevanessa86@gmail.com>
+| Date:   Thu Mar 6 15:44:11 2025 +0200
+|
+|     Implemented test 5
+|
+* commit 0fd9a1f4d893e47bebba9b408e1827435c02e556
+| Author: Vanessa Gatete <gatevanessa86@gmail.com>
+| Date:   Mon Mar 3 15:25:10 2025 +0200
+
+```
+### challenge 10
+```bash
+USER@DESKTOP-LNUFN1R MINGW64 ~/Documents/GitAdvancedExercises (main)
+$ git reflog
+19ddd0f (HEAD -> main) HEAD@{0}: cherry-pick: Implemented test 5
+0fd9a1f HEAD@{1}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{2}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{3}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{4}: commit: Implemented test 5
+0fd9a1f HEAD@{5}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{6}: rebase (finish): returning to refs/heads/main
+0fd9a1f HEAD@{7}: rebase (pick): Add readme.md
+d65d834 HEAD@{8}: rebase (pick): Create fourth File
+:...skipping...
+159727b HEAD@{9}: rebase (pick): Unwanted commit
+babfe62 HEAD@{10}: rebase (start): checkout HEAD~3
+:...skipping...
+19ddd0f (HEAD -> main) HEAD@{0}: cherry-pick: Implemented test 5
+0fd9a1f HEAD@{1}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{2}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{3}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{4}: commit: Implemented test 5
+0fd9a1f HEAD@{5}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{6}: rebase (finish): returning to refs/heads/main
+d65d834 HEAD@{8}: rebase (pick): Create fourth File
+159727b HEAD@{9}: rebase (pick): Unwanted commit
+babfe62 HEAD@{10}: rebase (start): checkout HEAD~3
+5ffcd14 HEAD@{11}: rebase (finish): returning to refs/heads/main
+5ffcd14 HEAD@{12}: rebase (start): checkout HEAD~1
+65f8830 HEAD@{13}: commit: Unwanted commit
+5ffcd14 HEAD@{14}: commit: Unwanted commit
+6c73f9f (origin/main) HEAD@{15}: rebase (finish): returning to refs/heads/main
+6c73f9f (origin/main) HEAD@{16}: rebase (start): checkout HEAD~3
+:...skipping...
+19ddd0f (HEAD -> main) HEAD@{0}: cherry-pick: Implemented test 5
+0fd9a1f HEAD@{1}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{2}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{3}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{4}: commit: Implemented test 5
+0fd9a1f HEAD@{5}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{6}: rebase (finish): returning to refs/heads/main
+0fd9a1f HEAD@{7}: rebase (pick): Add readme.md
+159727b HEAD@{9}: rebase (pick): Unwanted commit
+babfe62 HEAD@{10}: rebase (start): checkout HEAD~3
+5ffcd14 HEAD@{11}: rebase (finish): returning to refs/heads/main
+5ffcd14 HEAD@{12}: rebase (start): checkout HEAD~1
+65f8830 HEAD@{13}: commit: Unwanted commit
+5ffcd14 HEAD@{14}: commit: Unwanted commit
+6c73f9f (origin/main) HEAD@{15}: rebase (finish): returning to refs/heads/main
+6c73f9f (origin/main) HEAD@{16}: rebase (start): checkout HEAD~3
+6c73f9f (origin/main) HEAD@{17}: rebase (finish): returning to refs/heads/main
+6c73f9f (origin/main) HEAD@{18}: rebase (start): checkout HEAD~2
+6c73f9f (origin/main) HEAD@{19}: commit: Add readme.md
+b394919 HEAD@{20}: reset: moving to b394919
+7c1921a HEAD@{21}: commit: Create fourth File
+:...skipping...
+19ddd0f (HEAD -> main) HEAD@{0}: cherry-pick: Implemented test 5
+0fd9a1f HEAD@{1}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{2}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{3}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{4}: commit: Implemented test 5
+0fd9a1f HEAD@{5}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{6}: rebase (finish): returning to refs/heads/main
+0fd9a1f HEAD@{7}: rebase (pick): Add readme.md
+d65d834 HEAD@{8}: rebase (pick): Create fourth File
+159727b HEAD@{9}: rebase (pick): Unwanted commit
+babfe62 HEAD@{10}: rebase (start): checkout HEAD~3
+5ffcd14 HEAD@{11}: rebase (finish): returning to refs/heads/main
+5ffcd14 HEAD@{12}: rebase (start): checkout HEAD~1
+65f8830 HEAD@{13}: commit: Unwanted commit
+5ffcd14 HEAD@{14}: commit: Unwanted commit
+6c73f9f (origin/main) HEAD@{15}: rebase (finish): returning to refs/heads/main
+6c73f9f (origin/main) HEAD@{16}: rebase (start): checkout HEAD~3
+6c73f9f (origin/main) HEAD@{17}: rebase (finish): returning to refs/heads/main
+6c73f9f (origin/main) HEAD@{18}: rebase (start): checkout HEAD~2
+6c73f9f (origin/main) HEAD@{19}: commit: Add readme.md
+b394919 HEAD@{20}: reset: moving to b394919
+7c1921a HEAD@{21}: commit: Create fourth File
+eec6e52 HEAD@{22}: commit: Create third File
+:...skipping...
+19ddd0f (HEAD -> main) HEAD@{0}: cherry-pick: Implemented test 5
+0fd9a1f HEAD@{1}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{2}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{3}: checkout: moving from ft/branch to main
+c139841 (ft/branch) HEAD@{4}: commit: Implemented test 5
+0fd9a1f HEAD@{5}: checkout: moving from main to ft/branch
+0fd9a1f HEAD@{6}: rebase (finish): returning to refs/heads/main
+0fd9a1f HEAD@{7}: rebase (pick): Add readme.md
+d65d834 HEAD@{8}: rebase (pick): Create fourth File
+159727b HEAD@{9}: rebase (pick): Unwanted commit
+babfe62 HEAD@{10}: rebase (start): checkout HEAD~3
+5ffcd14 HEAD@{11}: rebase (finish): returning to refs/heads/main
+5ffcd14 HEAD@{12}: rebase (start): checkout HEAD~1
+65f8830 HEAD@{13}: commit: Unwanted commit
+5ffcd14 HEAD@{14}: commit: Unwanted commit
+6c73f9f (origin/main) HEAD@{15}: rebase (finish): returning to refs/heads/main
+6c73f9f (origin/main) HEAD@{16}: rebase (start): checkout HEAD~3
+6c73f9f (origin/main) HEAD@{17}: rebase (finish): returning to refs/heads/main
+6c73f9f (origin/main) HEAD@{18}: rebase (start): checkout HEAD~2
+6c73f9f (origin/main) HEAD@{19}: commit: Add readme.md
+b394919 HEAD@{20}: reset: moving to b394919
+7c1921a HEAD@{21}: commit: Create fourth File
+eec6e52 HEAD@{22}: commit: Create third File
+aac3fd8 HEAD@{23}: reset: moving to HEAD~1
 ```
