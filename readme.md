@@ -625,11 +625,72 @@ PS C:\Users\USER\Documents\GitAdvancedExercises>
 ```
 ### challenge 8
 ```bash
-
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout ft/new-branch-from-commit
+>>
+error: Your local changes to the following files would be overwritten by checkout:
+        readme.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+PS C:\Users\USER\Documents\GitAdvancedExercises> git add readme.md
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> git commit -m "Updated readme.md before rebasing"
+>>
+[main 04a4129] Updated readme.md before rebasing
+ 1 file changed, 41 insertions(+)
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout ft/new-branch-from-commit
+>>
+Switched to branch 'ft/new-branch-from-commit'
+PS C:\Users\USER\Documents\GitAdvancedExercises> git rebase main
+>>
+Successfully rebased and updated refs/heads/ft/new-branch-from-commit.
 ```
 ### challenge 9
 ```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout ft/new-branch-from-commit
+>>
+M       readme.md
+Already on 'ft/new-branch-from-commit'
+PS C:\Users\USER\Documents\GitAdvancedExercises> git branch -m ft/improved-branch-name
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> git branch
+>>
+  ft/branch
+* ft/improved-branch-name
+  main
+  master
 ```
 ### challenge 10
 ```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout bcde941
+>>
+Note: switching to 'bcde941'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at bcde941 Merged ft/new-branch-from-commit into main
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout main
+>>      
+error: Your local changes to the following files would be overwritten by checkout:
+        readme.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+PS C:\Users\USER\Documents\GitAdvancedExercises> git add readme.md
+>>      
+PS C:\Users\USER\Documents\GitAdvancedExercises> git commit -m "Updated readme.md before checking out a specific commit"
+>>
+[detached HEAD df73ca2] Updated readme.md before checking out a specific commit
+ 1 file changed, 54 insertions(+)
 ```
