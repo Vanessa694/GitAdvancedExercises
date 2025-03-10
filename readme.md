@@ -581,10 +581,51 @@ PS C:\Users\USER\Documents\GitAdvancedExercises>
 ```
 ### challenge 7
 ```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout main
+>>
+M       readme.md
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+PS C:\Users\USER\Documents\GitAdvancedExercises> git merge ft/new-branch-from-commit
+>>
+Already up to date.
+PS C:\Users\USER\Documents\GitAdvancedExercises> git status
+>>
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
 
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\USER\Documents\GitAdvancedExercises> git add readme.md
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> git merge ft/new-branch-from-commit
+>> 
+Already up to date.
+PS C:\Users\USER\Documents\GitAdvancedExercises> git status       
+>> 
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   readme.md
+
+PS C:\Users\USER\Documents\GitAdvancedExercises> git commit -m "Merged ft/new-branch-from-commit into main"
+>> 
+[main bcde941] Merged ft/new-branch-from-commit into main
+ 1 file changed, 107 insertions(+)
+PS C:\Users\USER\Documents\GitAdvancedExercises>
 ```
 ### challenge 8
 ```bash
+
 ```
 ### challenge 9
 ```bash
