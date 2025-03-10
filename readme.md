@@ -694,3 +694,211 @@ PS C:\Users\USER\Documents\GitAdvancedExercises> git commit -m "Updated readme.m
 [detached HEAD df73ca2] Updated readme.md before checking out a specific commit
  1 file changed, 54 insertions(+)
 ```
+## part 3
+### challenge 1
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git stash
+>>
+No local changes to save
+PS C:\Users\USER\Documents\GitAdvancedExercises> git status
+>>
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\USER\Documents\GitAdvancedExercises> git stash list
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 2
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git stash pop
+>>
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (7e4699ef54d37eb678024515c6159399ed068125)
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 3
+
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout -b feature-branch
+>>
+Switched to a new branch 'feature-branch'
+PS C:\Users\USER\Documents\GitAdvancedExercises> nano README.md
+>>
+nano : The term 'nano' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.       
+At line:1 char:1
++ nano README.md
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (nano:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\USER\Documents\GitAdvancedExercises> code README.md                          
+>> 
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout feature-branch   
+>> 
+M       readme.md
+Already on 'feature-branch'
+PS C:\Users\USER\Documents\GitAdvancedExercises> code README.md
+>> 
+PS C:\Users\USER\Documents\GitAdvancedExercises> code readme.md
+>> 
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout main          
+M       readme.md
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout -b feature-branch
+>> 
+fatal: a branch named 'feature-branch' already exists
+PS C:\Users\USER\Documents\GitAdvancedExercises> git add heyyyy.md 
+PS C:\Users\USER\Documents\GitAdvancedExercises> git commit -m "Modified heyyyy.md in feature branch"
+[main 338e214] Modified heyyyy.md in feature branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 heyyyy.md
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout main
+>>
+M       readme.md
+Already on 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+PS C:\Users\USER\Documents\GitAdvancedExercises> git add heyyyy.md
+PS C:\Users\USER\Documents\GitAdvancedExercises> git commit -m "Modified heyyyy.md in main branch"
+[main f72a3c8] Modified heyyyy.md in main branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\USER\Documents\GitAdvancedExercises> git merge feature-branch
+>>
+Already up to date.
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 4
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+tortoisemerge emerge vimdiff nvimdiff
+No files need merging
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 5
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout f72a3c8      
+M       readme.md
+Note: switching to 'f72a3c8'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f72a3c8 Modified heyyyy.md in main branch
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 6
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> New-Item -ItemType File -Name .gitignore
+>>
+
+
+    Directory: C:\Users\USER\Documents\GitAdvancedExercises
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         3/10/2025   7:20 PM              0 .gitignore
+
+
+PS C:\Users\USER\Documents\GitAdvancedExercises> notepad .gitignore
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> /tmp
+>>
+/tmp : The term '/tmp' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.       
+At line:1 char:1
++ /tmp
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (/tmp:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\USER\Documents\GitAdvancedExercises> git status
+>>
+HEAD detached at f72a3c8
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 7
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout main   
+M       readme.md
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+PS C:\Users\USER\Documents\GitAdvancedExercises> git tag v1.0
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 8
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git tag 
+v1.0
+PS C:\Users\USER\Documents\GitAdvancedExercises> git tag -d v1.0
+Deleted tag 'v1.0' (was f72a3c8)
+PS C:\Users\USER\Documents\GitAdvancedExercises>
+```
+### challenge 9
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git push origin main
+>>
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 614 bytes | 102.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/Vanessa694/GitAdvancedExercises
+   8445766..f72a3c8  main -> main
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 10
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git pull origin main
+>>
+From https://github.com/Vanessa694/GitAdvancedExercises
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+
+
+
+
+
