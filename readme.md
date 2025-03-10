@@ -485,3 +485,110 @@ b394919 HEAD@{20}: reset: moving to b394919
 eec6e52 HEAD@{22}: commit: Create third File
 aac3fd8 HEAD@{23}: reset: moving to HEAD~1
 ```
+## part2
+### challenge1
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git branch ft/new-feature
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout ft/new-feature
+>>
+M       readme.md
+Switched to branch 'ft/new-feature'
+```
+### challenge 2
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> echo "This is the core functionality for the new feature." > feature.txt
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> git add feature.txt
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> git commit -m "Implemented core functionality for new feature"
+>>
+[ft/new-feature 626e16e] Implemented core functionality for new feature
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature.txt
+PS C:\Users\USER\Documents\GitAdvancedExercises> git log --oneline
+>>
+626e16e (HEAD -> ft/new-feature) Implemented core functionality for new feature
+10d9056 (origin/main, main) Added some challenges
+61d633f Implemented test 5
+514f9a0 Unwanted commit
+6c73f9f Add readme.md
+b394919 Create fourth File
+babfe62 chore: Create initial file
+3cc7dac chore:  create another file
+59b135b chore: Create initial file
+c1fc39e chore: Create create another file
+2940878 (master) chore: Create initial file
+aac3fd8 chore: Create initial file
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 3
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout main
+>>
+M       readme.md
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\USER\Documents\GitAdvancedExercises> echo "This project implements various features for better functionality." > readme.txt
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> git add readme.txt
+>>
+PS C:\Users\USER\Documents\GitAdvancedExercises> git commit -m "Updated project readme"
+>>
+[main 74344f7] Updated project readme
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 readme.txt
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 4
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git merge ft/new-feature
+>>
+Merge made by the 'ort' strategy.
+ feature.txt | Bin 0 -> 108 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature.txt
+```
+### challenge 5
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git branch -d ft/new-feature
+>> 
+Deleted branch ft/new-feature (was 626e16e).
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 6
+```bash
+PS C:\Users\USER\Documents\GitAdvancedExercises> git log --oneline
+>>
+b842b79 (HEAD -> main) Merge branch 'ft/new-feature'
+74344f7 Updated project readme
+626e16e Implemented core functionality for new feature
+10d9056 (origin/main) Added some challenges
+61d633f Implemented test 5
+514f9a0 Unwanted commit
+6c73f9f Add readme.md
+b394919 Create fourth File
+babfe62 chore: Create initial file
+3cc7dac chore:  create another file
+59b135b chore: Create initial file
+c1fc39e chore: Create create another file
+2940878 (master) chore: Create initial file
+PS C:\Users\USER\Documents\GitAdvancedExercises> git checkout -b ft/new-branch-from-commit 626e16e
+>>
+M       readme.md
+Switched to a new branch 'ft/new-branch-from-commit'
+PS C:\Users\USER\Documents\GitAdvancedExercises> 
+```
+### challenge 7
+```bash
+
+```
+### challenge 8
+```bash
+```
+### challenge 9
+```bash
+```
+### challenge 10
+```bash
+```
